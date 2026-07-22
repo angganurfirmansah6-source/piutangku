@@ -10,7 +10,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sql.js@1.10.3/dist/sql-wasm.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
 <style>
-:root{--bg-app:#f8fafc;--surface:#fff;--surface-2:#f1f5f9;--text-primary:#0f172a;--text-secondary:#64748b;--border:#e2e8f0;--blue:#2563eb;--blue-soft:#dbeafe;--green:#16a34a;--green-soft:#dcfce7;--yellow:#ca8a04;--yellow-soft:#fef9c3;--red:#dc2626;--red-soft:#fee2e2;--shadow-lg:0 20px 60px rgba(2,6,23,.28);--radius:18px}*{box-sizing:border-box}body{background:radial-gradient(circle at top,#334155 0,#0f172a 48%,#020617 100%);color:var(--text-primary);margin:0;padding:0;overflow-x:hidden;font-family:'Inter',system-ui,sans-serif}#app{display:flex;justify-content:center;align-items:center;min-height:100vh;width:100%}.app-container{aspect-ratio:10/21;height:min(915px,calc(100vh - 40px));max-width:440px;background:var(--bg-app);box-shadow:var(--shadow-lg),0 0 0 12px #1e293b;border-radius:40px;position:relative;overflow:hidden;display:flex;flex-direction:column}.app-notch{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:110px;height:30px;background:#1e293b;border-radius:15px;z-index:1000;display:flex;align-items:center;justify-content:center}.app-notch:after{content:'';width:12px;height:12px;background:#0f172a;border-radius:50%;margin-left:50px}.phone-status-bar{position:absolute;top:0;left:0;right:0;z-index:999;display:flex;justify-content:flex-start;align-items:center;padding:4px 24px 0;height:22px;background:var(--bg-app);border-top-left-radius:40px;border-top-right-radius:40px;pointer-events:none}.status-bar-time{font-size:.65rem;font-weight:800;color:#64748b;letter-spacing:.5px}.app-body{flex:1;width:100%;height:100%;overflow:hidden;padding-top:24px}.screen{height:100%;display:flex;flex-direction:column;overflow:hidden}.content{flex:1;overflow:auto;padding:18px 18px 96px}.header{padding:18px 18px 12px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;gap:10px;align-items:center}.logo{width:42px;height:42px;border-radius:16px;background:linear-gradient(135deg,#2563eb,#38bdf8);color:white;display:grid;place-items:center;font-weight:900;box-shadow:0 8px 20px rgba(37,99,235,.25)}h1,h2,h3,p{margin:0}.muted{color:var(--text-secondary)}.small{font-size:12px}.title{font-size:22px;font-weight:800}.btn{border:0;border-radius:14px;padding:12px 14px;font-weight:800;background:var(--blue);color:white;cursor:pointer;min-height:44px}.btn.secondary{background:var(--surface-2);color:var(--text-primary)}.btn.danger{background:var(--red)}.btn.ghost{background:transparent;color:var(--blue);padding:8px}.grid{display:grid;gap:12px}.grid.two{grid-template-columns:1fr 1fr}.card{background:rgba(255,255,255,.92);border:1px solid var(--border);border-radius:var(--radius);padding:14px;box-shadow:0 1px 2px rgba(15,23,42,.04)}.hero{background:linear-gradient(135deg,#1d4ed8,#38bdf8);color:white;border-radius:28px;padding:24px 18px;margin:8px 0 18px;box-shadow:0 20px 50px rgba(37,99,235,.28)}.hero p{color:rgba(255,255,255,.82);margin-top:8px;line-height:1.5}.input,label select,label input,label textarea{width:100%}label{display:grid;gap:7px;font-size:12px;font-weight:800;color:#475569;margin-bottom:10px}input,select,textarea{border:1px solid var(--border);border-radius:14px;padding:12px;background:white;font:inherit;color:var(--text-primary);outline:none}input:focus,select:focus,textarea:focus{border-color:#60a5fa;box-shadow:0 0 0 4px #dbeafe}.tabs{position:absolute;bottom:0;left:0;right:0;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(5,1fr);padding:8px 8px 14px;gap:4px}.tab{border:0;background:transparent;color:#64748b;font-size:10px;font-weight:800;display:grid;gap:4px;place-items:center;padding:7px 2px;border-radius:14px}.tab.active{background:var(--blue-soft);color:var(--blue)}.tab span:first-child{font-size:18px}.row{display:flex;align-items:center;justify-content:space-between;gap:10px}.list{display:grid;gap:10px}.pill{display:inline-flex;align-items:center;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:900}.green{background:var(--green-soft);color:var(--green)}.yellow{background:var(--yellow-soft);color:var(--yellow)}.red{background:var(--red-soft);color:var(--red)}.blue{background:var(--blue-soft);color:var(--blue)}.table-wrap{overflow:auto;border-radius:14px;border:1px solid var(--border)}table{width:100%;border-collapse:collapse;background:white;font-size:12px;min-width:520px}th,td{text-align:left;padding:10px;border-bottom:1px solid var(--border)}th{background:#f8fafc;color:#475569}.toast{position:absolute;left:18px;right:18px;top:62px;z-index:2000;background:#0f172a;color:white;border-radius:16px;padding:12px 14px;font-size:13px;box-shadow:0 12px 30px rgba(2,6,23,.28)}.modal{position:absolute;inset:0;background:rgba(15,23,42,.42);z-index:1500;display:grid;place-items:end;padding:14px}.sheet{width:100%;max-height:88%;overflow:auto;background:white;border-radius:26px;padding:18px;box-shadow:0 -20px 70px rgba(15,23,42,.25)}.login{height:100%;overflow:auto;padding:36px 22px;background:linear-gradient(180deg,#eff6ff 0,#f8fafc 45%,#fff 100%)}.login-logo{width:76px;height:76px;border-radius:26px;background:linear-gradient(135deg,#1d4ed8,#38bdf8);color:white;display:grid;place-items:center;font-size:30px;font-weight:900;margin:36px auto 18px}.kbd{font-family:ui-monospace,Menlo,monospace;background:#f1f5f9;padding:2px 6px;border-radius:7px}.stat{font-size:22px;font-weight:900;margin-top:6px}.empty{text-align:center;padding:26px 12px;color:#64748b}.print-area{background:white;color:#111;padding:20px}@media(max-width:500px){body{background:var(--bg-app)}#app{min-height:100vh;min-height:100dvh;align-items:flex-start;justify-content:flex-start}.app-container{max-width:100%!important;width:100%!important;max-height:none!important;height:100vh!important;height:100dvh!important;aspect-ratio:unset!important;border-radius:0!important;box-shadow:none!important;padding-top:env(safe-area-inset-top,0)}.app-notch,.phone-status-bar{display:none!important}.app-body{padding-top:8px!important}}@media print{body{background:white}#app{display:block}.app-container{box-shadow:none;border-radius:0;height:auto;max-width:none}.app-notch,.phone-status-bar,.tabs,.header,.no-print{display:none!important}.app-body,.content{overflow:visible;padding:0}.only-print{display:block!important}}.only-print{display:none}
+:root{--bg-app:#f8fafc;--surface:#fff;--surface-2:#f1f5f9;--text-primary:#0f172a;--text-secondary:#64748b;--border:#e2e8f0;--blue:#2563eb;--blue-soft:#dbeafe;--green:#16a34a;--green-soft:#dcfce7;--yellow:#ca8a04;--yellow-soft:#fef9c3;--red:#dc2626;--red-soft:#fee2e2;--shadow-lg:0 20px 60px rgba(2,6,23,.28);--radius:18px}*{box-sizing:border-box}body{background:radial-gradient(circle at top,#334155 0,#0f172a 48%,#020617 100%);color:var(--text-primary);margin:0;padding:0;overflow-x:hidden;font-family:'Inter',system-ui,sans-serif}#app{display:flex;justify-content:center;align-items:center;min-height:100vh;width:100%}.app-container{aspect-ratio:10/21;height:min(915px,calc(100vh - 40px));max-width:440px;background:var(--bg-app);box-shadow:var(--shadow-lg),0 0 0 12px #1e293b;border-radius:40px;position:relative;overflow:hidden;display:flex;flex-direction:column}.app-notch{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:110px;height:30px;background:#1e293b;border-radius:15px;z-index:1000;display:flex;align-items:center;justify-content:center}.app-notch:after{content:'';width:12px;height:12px;background:#0f172a;border-radius:50%;margin-left:50px}.phone-status-bar{position:absolute;top:0;left:0;right:0;z-index:999;display:flex;justify-content:flex-start;align-items:center;padding:4px 24px 0;height:22px;background:var(--bg-app);border-top-left-radius:40px;border-top-right-radius:40px;pointer-events:none}.status-bar-time{font-size:.65rem;font-weight:800;color:#64748b;letter-spacing:.5px}.app-body{flex:1;width:100%;height:100%;overflow:hidden;padding-top:24px}.screen{height:100%;display:flex;flex-direction:column;overflow:hidden}.content{flex:1;overflow:auto;padding:18px 18px 96px}.header{padding:18px 18px 12px;display:flex;align-items:center;justify-content:space-between;gap:12px}.brand{display:flex;gap:10px;align-items:center}.logo{width:42px;height:42px;border-radius:16px;background:linear-gradient(135deg,#2563eb,#38bdf8);color:white;display:grid;place-items:center;font-weight:900;box-shadow:0 8px 20px rgba(37,99,235,.25)}h1,h2,h3,p{margin:0}.muted{color:var(--text-secondary)}.small{font-size:12px}.title{font-size:22px;font-weight:800}.btn{border:0;border-radius:14px;padding:12px 14px;font-weight:800;background:var(--blue);color:white;cursor:pointer;min-height:44px;transition:all .2s}.btn:hover{opacity:.9}.btn:active{transform:scale(.98)}.btn.secondary{background:var(--surface-2);color:var(--text-primary)}.btn.danger{background:var(--red)}.btn.ghost{background:transparent;color:var(--blue);padding:8px}.grid{display:grid;gap:12px}.grid.two{grid-template-columns:1fr 1fr}.card{background:rgba(255,255,255,.92);border:1px solid var(--border);border-radius:var(--radius);padding:14px;box-shadow:0 1px 2px rgba(15,23,42,.04)}.hero{background:linear-gradient(135deg,#1d4ed8,#38bdf8);color:white;border-radius:28px;padding:24px 18px;margin:8px 0 18px;box-shadow:0 20px 50px rgba(37,99,235,.28)}.hero p{color:rgba(255,255,255,.82);margin-top:8px;line-height:1.5}.input,label select,label input,label textarea{width:100%}label{display:grid;gap:7px;font-size:12px;font-weight:800;color:#475569;margin-bottom:10px}input,select,textarea{border:1px solid var(--border);border-radius:14px;padding:12px;background:white;font:inherit;color:var(--text-primary);outline:none}input:focus,select:focus,textarea:focus{border-color:#60a5fa;box-shadow:0 0 0 4px #dbeafe}.tabs{position:absolute;bottom:0;left:0;right:0;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(5,1fr);padding:8px 8px 14px;gap:4px}.tab{border:0;background:transparent;color:#64748b;font-size:10px;font-weight:800;display:grid;gap:4px;place-items:center;padding:7px 2px;border-radius:14px;cursor:pointer;transition:all .2s}.tab:hover{opacity:.7}.tab.active{background:var(--blue-soft);color:var(--blue)}.tab span:first-child{font-size:18px}.row{display:flex;align-items:center;justify-content:space-between;gap:10px}.list{display:grid;gap:10px}.pill{display:inline-flex;align-items:center;border-radius:999px;padding:5px 9px;font-size:11px;font-weight:900}.green{background:var(--green-soft);color:var(--green)}.yellow{background:var(--yellow-soft);color:var(--yellow)}.red{background:var(--red-soft);color:var(--red)}.blue{background:var(--blue-soft);color:var(--blue)}.table-wrap{overflow:auto;border-radius:14px;border:1px solid var(--border)}table{width:100%;border-collapse:collapse;background:white;font-size:12px;min-width:520px}th,td{text-align:left;padding:10px;border-bottom:1px solid var(--border)}th{background:#f8fafc;color:#475569}.toast{position:fixed;left:18px;right:18px;top:62px;z-index:2000;background:#0f172a;color:white;border-radius:16px;padding:12px 14px;font-size:13px;box-shadow:0 12px 30px rgba(2,6,23,.28);animation:slideIn .3s ease-out}.modal{position:fixed;inset:0;background:rgba(15,23,42,.42);z-index:1500;display:grid;place-items:end;padding:14px}.sheet{width:100%;max-height:88%;overflow:auto;background:white;border-radius:26px;padding:18px;box-shadow:0 -20px 70px rgba(15,23,42,.25)}.login{height:100%;overflow:auto;padding:36px 22px;background:linear-gradient(180deg,#eff6ff 0,#f8fafc 45%,#fff 100%)}.login-logo{width:76px;height:76px;border-radius:26px;background:linear-gradient(135deg,#1d4ed8,#38bdf8);color:white;display:grid;place-items:center;font-size:30px;font-weight:900;margin:36px auto 18px}.kbd{font-family:ui-monospace,Menlo,monospace;background:#f1f5f9;padding:2px 6px;border-radius:7px}.stat{font-size:22px;font-weight:900;margin-top:6px}.empty{text-align:center;padding:26px 12px;color:#64748b}.print-area{background:white;color:#111;padding:20px}@keyframes slideIn{from{transform:translateY(-100%);opacity:0}to{transform:translateY(0);opacity:1}}@media(max-width:500px){body{background:var(--bg-app)}#app{min-height:100vh;min-height:100dvh;align-items:flex-start;justify-content:flex-start}.app-container{max-width:100%!important;width:100%!important;max-height:none!important;height:100vh!important;height:100dvh!important;aspect-ratio:unset!important;border-radius:0!important;box-shadow:none!important;padding-top:env(safe-area-inset-top,0)}.app-notch,.phone-status-bar{display:none!important}.app-body{padding-top:8px!important}.tabs{left:10px;right:10px;bottom:10px;padding:6px}.tab{font-size:9px}.tab span:first-child{font-size:16px}}@media print{body{background:white}#app{display:block}.app-container{box-shadow:none;border-radius:0;height:auto;max-width:none}.app-notch,.phone-status-bar,.tabs,.header,.no-print{display:none!important}.app-body,.content{overflow:visible;padding:0}.only-print{display:block!important}}.only-print{display:none}
 </style>
 
 <style id="premium-ui-refresh">
@@ -25,7 +25,6 @@ input,select,textarea{border-color:#d9e6fb;background:#fbfdff;border-radius:16px
 .stat{font-size:20px;letter-spacing:-.5px}.pill{box-shadow:inset 0 0 0 1px rgba(255,255,255,.5)}
 .tabs{left:12px;right:12px;bottom:12px;border:1px solid rgba(226,232,240,.9);border-radius:26px;padding:8px;box-shadow:0 20px 44px rgba(15,23,42,.12)}.tab{border-radius:18px}.tab.active{background:linear-gradient(135deg,#dbeafe,#eff6ff);box-shadow:inset 0 0 0 1px #bfdbfe}
 .sheet{border-radius:30px 30px 24px 24px}.table-wrap{box-shadow:0 8px 22px rgba(15,23,42,.05)}
-@media(max-width:500px){.tabs{left:10px;right:10px;bottom:10px}.login{padding-top:46px}}
 </style>
 </head>
 <body><div id="app"><div class="app-container"><div class="app-notch"></div><div class="phone-status-bar"><span class="status-bar-time" id="clock">19.50</span></div><main class="app-body"><div id="root" class="screen"></div></main></div></div>
@@ -33,29 +32,375 @@ input,select,textarea{border-color:#d9e6fb;background:#fbfdff;border-radius:16px
 const App={db:null,SQL:null,user:null,view:'dashboard',modal:null,toast:'',chart:null,fallback:false};
 const roles={admin:['dashboard','users','settings'],sales:['dashboard','customers','receivables','reports'],finance:['dashboard','receivables','payments','reports'],manager:['dashboard','receivables','payments'],owner:['dashboard','settings']};
 const roleLabels={admin:'Admin',sales:'Staf Penjualan',finance:'Staf Keuangan',manager:'Manajer Keuangan',owner:'Pemilik Perusahaan'};
-function q(sql,params=[]){const stmt=App.db.prepare(sql);stmt.bind(params);const rows=[];while(stmt.step())rows.push(stmt.getAsObject());stmt.free();return rows}function run(sql,params=[]){App.db.run(sql,params);saveDb();render()}function money(n){return 'Rp '+Number(n||0).toLocaleString('id-ID')}function today(){return new Date().toISOString().slice(0,10)}function showToast(t){App.toast=t;render();setTimeout(()=>{App.toast='';render()},2600)}
-function idbGet(){return new Promise((res,rej)=>{const r=indexedDB.open('piutangku-db',1);r.onupgradeneeded=()=>r.result.createObjectStore('files');r.onerror=()=>rej(r.error);r.onsuccess=()=>{const tx=r.result.transaction('files','readonly');const g=tx.objectStore('files').get('main');g.onsuccess=()=>res(g.result);g.onerror=()=>rej(g.error)}})}function idbSet(data){return new Promise((res,rej)=>{const r=indexedDB.open('piutangku-db',1);r.onupgradeneeded=()=>r.result.createObjectStore('files');r.onerror=()=>rej(r.error);r.onsuccess=()=>{const tx=r.result.transaction('files','readwrite');tx.objectStore('files').put(data,'main');tx.oncomplete=res;tx.onerror=()=>rej(tx.error)}})}async function saveDb(){try{const data=App.db.export();await idbSet(data);localStorage.setItem('piutangku_backup_b64',btoa(String.fromCharCode(...data)))}catch(e){try{const data=App.db.export();let s='';for(let i=0;i<data.length;i++)s+=String.fromCharCode(data[i]);localStorage.setItem('piutangku_backup_b64',btoa(s))}catch(_){}}}
-function schema(){App.db.run(`PRAGMA foreign_keys=ON;CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,email TEXT UNIQUE,password TEXT,role TEXT,status TEXT DEFAULT 'active');CREATE TABLE IF NOT EXISTS customers(id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,phone TEXT,email TEXT,address TEXT,created_by INTEGER,created_at TEXT DEFAULT CURRENT_TIMESTAMP,FOREIGN KEY(created_by) REFERENCES users(id));CREATE TABLE IF NOT EXISTS receivables(id INTEGER PRIMARY KEY AUTOINCREMENT,customer_id INTEGER,invoice_no TEXT UNIQUE,transaction_date TEXT,due_date TEXT,amount REAL,paid_amount REAL DEFAULT 0,remaining_amount REAL DEFAULT 0,status TEXT DEFAULT 'unpaid',created_by INTEGER,FOREIGN KEY(customer_id) REFERENCES customers(id),FOREIGN KEY(created_by) REFERENCES users(id));CREATE TABLE IF NOT EXISTS payments(id INTEGER PRIMARY KEY AUTOINCREMENT,receivable_id INTEGER,payment_date TEXT,amount REAL,method TEXT,note TEXT,created_by INTEGER,FOREIGN KEY(receivable_id) REFERENCES receivables(id),FOREIGN KEY(created_by) REFERENCES users(id));CREATE TABLE IF NOT EXISTS reports(id INTEGER PRIMARY KEY AUTOINCREMENT,report_no TEXT,report_type TEXT,period_start TEXT,period_end TEXT,created_by INTEGER,created_at TEXT DEFAULT CURRENT_TIMESTAMP,status TEXT DEFAULT 'generated',file_name TEXT,FOREIGN KEY(created_by) REFERENCES users(id));CREATE TRIGGER IF NOT EXISTS trg_receivable_insert AFTER INSERT ON receivables BEGIN UPDATE receivables SET remaining_amount=NEW.amount-NEW.paid_amount,status=CASE WHEN NEW.amount-NEW.paid_amount<=0 THEN 'paid' WHEN NEW.paid_amount>0 THEN 'partial' ELSE 'unpaid' END WHERE id=NEW.id;END;CREATE TRIGGER IF NOT EXISTS trg_payment_insert AFTER INSERT ON payments BEGIN UPDATE receivables SET paid_amount=paid_amount+NEW.amount,remaining_amount=amount-(paid_amount+NEW.amount),status=CASE WHEN amount-(paid_amount+NEW.amount)<=0 THEN 'paid' WHEN paid_amount+NEW.amount>0 THEN 'partial' ELSE 'unpaid' END WHERE id=NEW.receivable_id;END;`);if(q('SELECT COUNT(*) c FROM users')[0].c===0){App.db.run(`INSERT INTO users(name,email,password,role,status) VALUES ('Andi Pratama','admin@piutangku.local','admin123','admin','active'),('Rina Oktaviani','sales@piutangku.local','sales123','sales','active'),('Siti Rahmawati','keuangan@piutangku.local','keuangan123','finance','active'),('Dedi Kurniawan','manager@piutangku.local','manager123','manager','active'),('Budi Santoso','owner@piutangku.local','owner123','owner','active');INSERT INTO customers(name,phone,email,address,created_by) VALUES ('PT Sinar Abadi','081234567001','finance@sinarabadi.co.id','Jl. Merdeka No. 10, Bandung',2),('CV Maju Jaya','081234567002','admin@majujaya.id','Jl. Sudirman No. 22, Jakarta',2),('Toko Berkah Sentosa','081234567003','owner@berkahsentosa.id','Jl. Diponegoro No. 5, Surabaya',2);INSERT INTO receivables(customer_id,invoice_no,transaction_date,due_date,amount,created_by) VALUES (1,'INV-2026-001','2026-07-01','2026-07-30',12500000,2),(2,'INV-2026-002','2026-07-04','2026-07-20',7800000,2),(3,'INV-2026-003','2026-07-10','2026-08-10',4300000,2);INSERT INTO payments(receivable_id,payment_date,amount,method,note,created_by) VALUES (1,'2026-07-12',5000000,'Transfer','Pembayaran pertama',3),(2,'2026-07-16',7800000,'Tunai','Lunas',3);`)}saveDb()}
-async function boot(){document.getElementById('clock').textContent=new Date().toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'});setInterval(()=>document.getElementById('clock').textContent=new Date().toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'}),1000);try{if(typeof initSqlJs==='undefined')throw new Error('sql.js belum termuat');App.SQL=await initSqlJs({locateFile:f=>'https://cdn.jsdelivr.net/npm/sql.js@1.10.3/dist/'+f});let data=null;try{data=await idbGet()}catch(e){const b=localStorage.getItem('piutangku_backup_b64');if(b){const s=atob(b);data=new Uint8Array([...s].map(c=>c.charCodeAt(0)))}}App.db=data?new App.SQL.Database(data):new App.SQL.Database();schema();render()}catch(e){renderStaticFallback(e)}}
-function can(v){return App.user&&roles[App.user.role].includes(v)}function navs(){const all=[['dashboard','🏠','Dasbor'],['customers','🏢','Pelanggan'],['receivables','🧾','Piutang'],['payments','💳','Bayar'],['reports','📄','Laporan'],['users','👥','User'],['settings','⚙️','Setelan']];return all.filter(x=>can(x[0])).slice(0,5)}
-function render(){const r=document.getElementById('root');if(!App.user){r.innerHTML=loginHtml();bindLogin();return}r.innerHTML=`${App.toast?`<div class="toast">${App.toast}</div>`:''}<div class="header"><div class="brand"><div class="logo">P</div><div><h2>PiutangKu</h2><p class="small muted">${roleLabels[App.user.role]} • ${App.user.name}</p></div></div><button class="btn ghost" onclick="logout()">Keluar</button></div><div class="content">${page()}</div><div class="tabs">${navs().map(n=>`<button class="tab ${App.view===n[0]?'active':''}" onclick="go('${n[0]}')"><span>${n[1]}</span><span>${n[2]}</span></button>`).join('')}</div>${App.modal?modalHtml():''}`;setTimeout(drawChart,50)}
-function loginHtml(){return `<div class="login"><div class="login-logo">P</div><h1 class="title" style="text-align:center">PiutangKu</h1><p class="muted" style="text-align:center;margin:10px 0 22px">Pilih akun pengguna, password otomatis tersembunyi, lalu masuk ke dashboard PiutangKu.</p><div class="card"><label>Email Login<select id="email"><option value="admin@piutangku.local" data-password="admin123">admin@piutangku.local</option><option value="sales@piutangku.local" data-password="sales123">sales@piutangku.local</option><option value="keuangan@piutangku.local" data-password="keuangan123">keuangan@piutangku.local</option><option value="manager@piutangku.local" data-password="manager123">manager@piutangku.local</option><option value="owner@piutangku.local" data-password="owner123">owner@piutangku.local</option></select></label><label>Password<input id="password" type="password" value="admin123" readonly></label><button class="btn" style="width:100%" id="loginBtn">Masuk</button></div></div>`}
-function bindLogin(){const emailSelect=document.getElementById('email');const passwordInput=document.getElementById('password');const syncPassword=()=>{passwordInput.value=emailSelect.options[emailSelect.selectedIndex].dataset.password||''};emailSelect.onchange=syncPassword;syncPassword();document.getElementById('loginBtn').onclick=()=>{const u=q('SELECT * FROM users WHERE email=? AND password=? AND status="active"',[emailSelect.value,passwordInput.value])[0];if(u){App.user=u;App.view='dashboard';showToast('Berhasil masuk sebagai '+roleLabels[u.role])}else showToast('Email login tidak ditemukan')}}function logout(){App.user=null;App.view='dashboard';render()}function go(v){App.view=v;render()}function statusP(s){return s==='paid'?'<span class="pill green">Lunas</span>':s==='partial'?'<span class="pill yellow">Bayar Setengah</span>':'<span class="pill red">Belum Lunas</span>'}
-function stats(){return q(`SELECT (SELECT COUNT(*) FROM customers) customers,(SELECT COUNT(*) FROM receivables) trx,(SELECT COALESCE(SUM(amount),0) FROM receivables) total,(SELECT COALESCE(SUM(remaining_amount),0) FROM receivables) remain,(SELECT COUNT(*) FROM receivables WHERE due_date < date('now') AND status!='paid') overdue,(SELECT COALESCE(SUM(amount),0) FROM payments) paid`)[0]}
-function page(){if(App.view==='dashboard')return dashboard();if(App.view==='customers')return customers();if(App.view==='receivables')return receivables();if(App.view==='payments')return payments();if(App.view==='reports')return reports();if(App.view==='users')return users();return settings()}
-function dashboard(){const s=stats();return `<div class="hero"><h1>Dashboard Piutang</h1><p>Ringkasan cepat untuk memantau piutang, pembayaran, pelanggan, dan jatuh tempo.</p></div><div class="grid two"><div class="card"><p class="small muted">Total Piutang</p><div class="stat">${money(s.total)}</div></div><div class="card"><p class="small muted">Sisa Piutang</p><div class="stat">${money(s.remain)}</div></div><div class="card"><p class="small muted">Pelanggan</p><div class="stat">${s.customers}</div></div><div class="card"><p class="small muted">Jatuh Tempo</p><div class="stat" style="color:var(--red)">${s.overdue}</div></div></div><div class="card" style="margin-top:12px"><b>Grafik pembayaran</b><canvas id="chart" height="170"></canvas></div><h3 style="margin:16px 0 10px">Transaksi terbaru</h3><div class="list">${q('SELECT r.*,c.name customer FROM receivables r JOIN customers c ON c.id=r.customer_id ORDER BY r.id DESC LIMIT 4').map(x=>`<div class="card"><div class="row"><div><b>${x.invoice_no}</b><p class="small muted">${x.customer}</p></div>${statusP(x.status)}</div><p style="margin-top:8px"><b>${money(x.remaining_amount)}</b> tersisa dari ${money(x.amount)}</p></div>`).join('')}</div>`}
-function customers(){return `<div class="row"><h2>Data Pelanggan</h2><button class="btn" onclick="openModal('customer')">Tambah</button></div><div class="list" style="margin-top:12px">${q('SELECT * FROM customers ORDER BY id DESC').map(c=>`<div class="card"><b>${c.name}</b><p class="small muted">${c.email} • ${c.phone}</p><p class="small" style="margin-top:8px">${c.address}</p></div>`).join('')}</div>`}
-function receivables(){return `<div class="row"><h2>Data Piutang</h2>${App.user.role==='sales'?`<button class="btn" onclick="openModal('receivable')">Tambah</button>`:''}</div><div class="list" style="margin-top:12px">${q('SELECT r.*,c.name customer FROM receivables r JOIN customers c ON c.id=r.customer_id ORDER BY r.id DESC').map(x=>`<div class="card"><div class="row"><div><b>${x.invoice_no}</b><p class="small muted">${x.customer} • JT ${x.due_date}</p></div>${statusP(x.status)}</div><div class="grid two" style="margin-top:10px"><p><span class="small muted">Nominal</span><br><b>${money(x.amount)}</b></p><p><span class="small muted">Sisa</span><br><b>${money(x.remaining_amount)}</b></p></div></div>`).join('')}</div>`}
-function payments(){return `<div class="row"><h2>Pembayaran</h2>${App.user.role==='finance'?`<button class="btn" onclick="openModal('payment')">Catat</button>`:''}</div><div class="list" style="margin-top:12px">${q('SELECT p.*,r.invoice_no,c.name customer FROM payments p JOIN receivables r ON r.id=p.receivable_id JOIN customers c ON c.id=r.customer_id ORDER BY p.id DESC').map(p=>`<div class="card"><div class="row"><div><b>${money(p.amount)}</b><p class="small muted">${p.customer} • ${p.invoice_no}</p></div><span class="pill blue">${p.method}</span></div><p class="small" style="margin-top:8px">${p.payment_date} — ${p.note||'-'}</p></div>`).join('')||'<div class="empty">Belum ada pembayaran.</div>'}</div>`}
-function reports(){return `<div class="row"><h2>Laporan</h2><button class="btn" onclick="openModal('report')">Preview</button></div><div class="card" style="margin-top:12px"><b>Format PDF/Cetak</b><p class="small muted" style="margin-top:8px;line-height:1.6">Tabel laporan berisi nama perusahaan, status lunas/tidak lunas, email, nomor telepon, dan alamat. Warna status: hijau lunas, kuning bayar setengah, merah belum lunas.</p></div><div class="list" style="margin-top:12px">${q('SELECT r.*,u.name creator FROM reports r LEFT JOIN users u ON u.id=r.created_by ORDER BY r.id DESC').map(x=>`<div class="card"><b>${x.report_no}</b><p class="small muted">${x.report_type} • ${x.period_start} s/d ${x.period_end}</p><p class="small">Dibuat oleh ${x.creator||'-'}</p></div>`).join('')||'<div class="empty">Belum ada riwayat laporan.</div>'}</div>`}
-function users(){return `<div class="row"><h2>Pengguna</h2><button class="btn" onclick="openModal('user')">Tambah</button></div><div class="list" style="margin-top:12px">${q('SELECT * FROM users ORDER BY id').map(u=>`<div class="card"><div class="row"><div><b>${u.name}</b><p class="small muted">${u.email}</p></div><span class="pill blue">${roleLabels[u.role]}</span></div></div>`).join('')}</div>`}
-function settings(){return `<h2>Pengaturan</h2><div class="card" style="margin-top:12px"><b>Cadangan Data Lokal</b><p class="small muted" style="line-height:1.6;margin:8px 0 12px">Ekspor database SQLite ke file agar data aman jika cache browser dibersihkan.</p><button class="btn" onclick="exportDb()">Cadangkan Data</button><label class="btn secondary" style="margin-top:10px;text-align:center">Pulihkan Data<input type="file" accept=".sqlite,.db" style="display:none" onchange="importDb(event)"></label></div><div class="card" style="margin-top:12px"><b>Arsitektur</b><p class="small muted" style="line-height:1.7;margin-top:8px">Local-first SQLite WASM, autosave IndexedDB, fallback localStorage/RAM, RBAC per role, dan trigger SQL untuk menghitung sisa piutang otomatis.</p></div>`}
-function openModal(t){App.modal=t;render()}function closeModal(){App.modal=null;render()}
-function modalHtml(){const t=App.modal;if(t==='customer')return sheet('Tambah Pelanggan',`<label>Nama Perusahaan<input id="m_name"></label><label>Email<input id="m_email"></label><label>No Telepon<input id="m_phone"></label><label>Alamat<textarea id="m_address"></textarea></label><button class="btn" onclick="saveCustomer()">Simpan</button>`);if(t==='receivable'){const opts=q('SELECT * FROM customers').map(c=>`<option value="${c.id}">${c.name}</option>`).join('');return sheet('Tambah Piutang',`<label>Pelanggan<select id="m_customer">${opts}</select></label><label>No Faktur<input id="m_invoice" value="INV-2026-${Date.now().toString().slice(-4)}"></label><label>Tanggal Transaksi<input type="date" id="m_date" value="${today()}"></label><label>Jatuh Tempo<input type="date" id="m_due" value="${today()}"></label><label>Nominal<input type="number" id="m_amount" value="1000000"></label><button class="btn" onclick="saveReceivable()">Simpan</button>`)}if(t==='payment'){const opts=q('SELECT r.*,c.name customer FROM receivables r JOIN customers c ON c.id=r.customer_id WHERE r.status!="paid"').map(r=>`<option value="${r.id}">${r.invoice_no} - ${r.customer} (${money(r.remaining_amount)})</option>`).join('');return sheet('Catat Pembayaran',`<label>Piutang<select id="m_receivable">${opts}</select></label><label>Tanggal<input type="date" id="m_date" value="${today()}"></label><label>Nominal Bayar<input type="number" id="m_amount" value="500000"></label><label>Metode<select id="m_method"><option>Transfer</option><option>Tunai</option><option>Giro</option></select></label><label>Keterangan<textarea id="m_note"></textarea></label><button class="btn" onclick="savePayment()">Simpan</button>`)}if(t==='user')return sheet('Tambah Pengguna',`<label>Nama<input id="m_name"></label><label>Email<input id="m_email"></label><label>Password<input id="m_password" value="user123"></label><label>Role<select id="m_role"><option value="sales">Staf Penjualan</option><option value="finance">Staf Keuangan</option><option value="manager">Manajer Keuangan</option><option value="owner">Pemilik</option><option value="admin">Admin</option></select></label><button class="btn" onclick="saveUser()">Simpan</button>`);return sheet('Preview Laporan',reportPreview()+`<button class="btn" onclick="generateReport()" style="width:100%;margin-top:12px">Generate & Cetak PDF</button>`)}function sheet(title,body){return `<div class="modal"><div class="sheet"><div class="row" style="margin-bottom:12px"><h2>${title}</h2><button class="btn secondary" onclick="closeModal()">Tutup</button></div>${body}</div></div>`}
-function saveCustomer(){run('INSERT INTO customers(name,email,phone,address,created_by) VALUES(?,?,?,?,?)',[m_name.value,m_email.value,m_phone.value,m_address.value,App.user.id]);closeModal();showToast('Pelanggan ditambahkan')}function saveReceivable(){run('INSERT INTO receivables(customer_id,invoice_no,transaction_date,due_date,amount,created_by) VALUES(?,?,?,?,?,?)',[m_customer.value,m_invoice.value,m_date.value,m_due.value,Number(m_amount.value),App.user.id]);closeModal();showToast('Piutang ditambahkan')}function savePayment(){run('INSERT INTO payments(receivable_id,payment_date,amount,method,note,created_by) VALUES(?,?,?,?,?,?)',[m_receivable.value,m_date.value,Number(m_amount.value),m_method.value,m_note.value,App.user.id]);closeModal();showToast('Pembayaran dicatat')}function saveUser(){run('INSERT INTO users(name,email,password,role,status) VALUES(?,?,?,?,"active")',[m_name.value,m_email.value,m_password.value,m_role.value]);closeModal();showToast('Pengguna ditambahkan')}
-function reportPreview(){const rows=q('SELECT c.name,c.email,c.phone,c.address,r.status,r.amount,r.remaining_amount FROM receivables r JOIN customers c ON c.id=r.customer_id ORDER BY c.name');return `<div class="print-area"><h2>Laporan Piutang PiutangKu</h2><p class="small muted">Tanggal: ${today()} • Dibuat oleh: ${App.user.name}</p><div class="table-wrap" style="margin-top:12px"><table><thead><tr><th>Perusahaan</th><th>Status</th><th>Email</th><th>No Telpon</th><th>Alamat</th><th>Sisa</th></tr></thead><tbody>${rows.map(x=>`<tr><td>${x.name}</td><td>${statusP(x.status)}</td><td>${x.email}</td><td>${x.phone}</td><td>${x.address}</td><td>${money(x.remaining_amount)}</td></tr>`).join('')}</tbody></table></div></div>`}
-function generateReport(){const no='RPT-'+Date.now();App.db.run('INSERT INTO reports(report_no,report_type,period_start,period_end,created_by,file_name) VALUES(?,?,?,?,?,?)',[no,'Laporan Piutang',today(),today(),App.user.id,no+'.pdf']);saveDb();document.body.insertAdjacentHTML('beforeend',`<div class="only-print">${reportPreview()}</div>`);window.print();document.querySelector('.only-print')?.remove();closeModal();showToast('Laporan dibuat. Pilih Save as PDF saat dialog cetak terbuka.')}function exportDb(){const data=App.db.export();const blob=new Blob([data],{type:'application/octet-stream'});const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='piutangku-backup.sqlite';a.click();URL.revokeObjectURL(a.href)}function importDb(e){const f=e.target.files[0];if(!f)return;const rd=new FileReader();rd.onload=()=>{App.db=new App.SQL.Database(new Uint8Array(rd.result));schema();showToast('Data berhasil dipulihkan');render()};rd.readAsArrayBuffer(f)}
-function drawChart(){const c=document.getElementById('chart');if(!c)return;if(App.chart)App.chart.destroy();const s=stats();App.chart=new Chart(c,{type:'doughnut',data:{labels:['Terbayar','Sisa'],datasets:[{data:[s.paid,s.remain],backgroundColor:['#16a34a','#2563eb'],borderWidth:0}]},options:{plugins:{legend:{position:'bottom'}},cutout:'68%'}})}
-function renderStaticFallback(e){document.getElementById('root').innerHTML=`<div class="login"><div class="login-logo">P</div><h1 class="title" style="text-align:center">PiutangKu</h1><p class="muted" style="text-align:center;margin:10px 0 22px">Mode tampilan aman aktif. Library SQLite WASM tidak termuat di lingkungan ini, tetapi aplikasi tidak blank dan siap berjalan saat file sql.js tersedia.</p><div class="card"><b>Proteksi Bootstrapping Aktif</b><p class="small muted" style="line-height:1.7;margin-top:8px">Fallback mencegah blank page. Untuk penggunaan penuh, buka file ini dengan koneksi internet atau salin sql.js dan sql-wasm.wasm ke hosting yang sama.</p></div><div class="hero"><h1>Dashboard Piutang</h1><p>Total piutang, pembayaran, laporan PDF, RBAC, dan cadangan data lokal sudah dirancang dalam single index.html.</p></div><div class="grid two"><div class="card"><p class="small muted">Total Piutang</p><div class="stat">Rp 24.600.000</div></div><div class="card"><p class="small muted">Sisa Piutang</p><div class="stat">Rp 11.900.000</div></div></div></div>`}
-window.addEventListener('error',e=>{if(!document.getElementById('root').innerHTML)renderStaticFallback(e.error)});boot();
+
+function q(sql,params=[]){
+  try{
+    const stmt=App.db.prepare(sql);
+    stmt.bind(params);
+    const rows=[];
+    while(stmt.step())rows.push(stmt.getAsObject());
+    stmt.free();
+    return rows;
+  }catch(e){
+    console.error('SQL Error:',e);
+    return [];
+  }
+}
+
+function run(sql,params=[]){
+  try{
+    App.db.run(sql,params);
+    saveDb();
+    render();
+  }catch(e){
+    console.error('Run Error:',e);
+    showToast('❌ Terjadi kesalahan saat menyimpan data');
+  }
+}
+
+function money(n){return 'Rp '+Number(n||0).toLocaleString('id-ID')}
+function today(){return new Date().toISOString().slice(0,10)}
+function showToast(t){App.toast=t;render();setTimeout(()=>{App.toast='';render()},2600)}
+
+function idbGet(){
+  return new Promise((res,rej)=>{
+    try{
+      const r=indexedDB.open('piutangku-db',1);
+      r.onupgradeneeded=()=>r.result.createObjectStore('files');
+      r.onerror=()=>rej(r.error);
+      r.onsuccess=()=>{
+        try{
+          const tx=r.result.transaction('files','readonly');
+          const g=tx.objectStore('files').get('main');
+          g.onsuccess=()=>res(g.result);
+          g.onerror=()=>rej(g.error);
+        }catch(e){rej(e)}
+      }
+    }catch(e){rej(e)}
+  })
+}
+
+function idbSet(data){
+  return new Promise((res,rej)=>{
+    try{
+      const r=indexedDB.open('piutangku-db',1);
+      r.onupgradeneeded=()=>r.result.createObjectStore('files');
+      r.onerror=()=>rej(r.error);
+      r.onsuccess=()=>{
+        try{
+          const tx=r.result.transaction('files','readwrite');
+          tx.objectStore('files').put(data,'main');
+          tx.oncomplete=res;
+          tx.onerror=()=>rej(tx.error);
+        }catch(e){rej(e)}
+      }
+    }catch(e){rej(e)}
+  })
+}
+
+async function saveDb(){
+  try{
+    const data=App.db.export();
+    await idbSet(data);
+    try{
+      const b64=btoa(String.fromCharCode(...data));
+      localStorage.setItem('piutangku_backup_b64',b64);
+    }catch(_){}
+  }catch(e){
+    console.error('Save error:',e);
+  }
+}
+
+function schema(){
+  App.db.run(`PRAGMA foreign_keys=ON;CREATE TABLE IF NOT EXISTS users(id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,email TEXT UNIQUE,password TEXT,role TEXT,status TEXT DEFAULT 'active');CREATE TABLE IF NOT EXISTS customers(id INTEGER PRIMARY KEY AUTOINCREMENT,name TEXT,phone TEXT,email TEXT,address TEXT,created_by INTEGER,created_at TEXT DEFAULT CURRENT_TIMESTAMP,FOREIGN KEY(created_by) REFERENCES users(id));CREATE TABLE IF NOT EXISTS receivables(id INTEGER PRIMARY KEY AUTOINCREMENT,customer_id INTEGER,invoice_no TEXT UNIQUE,transaction_date TEXT,due_date TEXT,amount REAL,paid_amount REAL DEFAULT 0,remaining_amount REAL DEFAULT 0,status TEXT DEFAULT 'unpaid',created_by INTEGER,FOREIGN KEY(customer_id) REFERENCES customers(id),FOREIGN KEY(created_by) REFERENCES users(id));CREATE TABLE IF NOT EXISTS payments(id INTEGER PRIMARY KEY AUTOINCREMENT,receivable_id INTEGER,payment_date TEXT,amount REAL,method TEXT,note TEXT,created_by INTEGER,FOREIGN KEY(receivable_id) REFERENCES receivables(id),FOREIGN KEY(created_by) REFERENCES users(id));CREATE TABLE IF NOT EXISTS reports(id INTEGER PRIMARY KEY AUTOINCREMENT,report_no TEXT,report_type TEXT,period_start TEXT,period_end TEXT,created_by INTEGER,created_at TEXT DEFAULT CURRENT_TIMESTAMP,status TEXT DEFAULT 'generated',file_name TEXT,FOREIGN KEY(created_by) REFERENCES users(id));CREATE TRIGGER IF NOT EXISTS trg_receivable_insert AFTER INSERT ON receivables BEGIN UPDATE receivables SET remaining_amount=NEW.amount-NEW.paid_amount,status=CASE WHEN NEW.amount-NEW.paid_amount<=0 THEN 'paid' WHEN NEW.paid_amount>0 THEN 'partial' ELSE 'unpaid' END WHERE id=NEW.id;END;CREATE TRIGGER IF NOT EXISTS trg_payment_insert AFTER INSERT ON payments BEGIN UPDATE receivables SET paid_amount=paid_amount+NEW.amount,remaining_amount=amount-(paid_amount+NEW.amount),status=CASE WHEN amount-(paid_amount+NEW.amount)<=0 THEN 'paid' WHEN paid_amount+NEW.amount>0 THEN 'partial' ELSE 'unpaid' END WHERE id=NEW.receivable_id;END;`);
+  
+  if(q('SELECT COUNT(*) c FROM users')[0]?.c===0){
+    App.db.run(`INSERT INTO users(name,email,password,role,status) VALUES ('Andi Pratama','admin@piutangku.local','admin123','admin','active'),('Rina Oktaviani','sales@piutangku.local','sales123','sales','active'),('Siti Rahmawati','keuangan@piutangku.local','keuangan123','finance','active'),('Dedi Kurniawan','manager@piutangku.local','manager123','manager','active'),('Budi Santoso','owner@piutangku.local','owner123','owner','active');INSERT INTO customers(name,phone,email,address,created_by) VALUES ('PT Sinar Abadi','081234567001','finance@sinarabadi.co.id','Jl. Merdeka No. 10, Bandung',2),('CV Maju Jaya','081234567002','admin@majujaya.id','Jl. Sudirman No. 22, Jakarta',2),('Toko Berkah Sentosa','081234567003','owner@berkahsentosa.id','Jl. Diponegoro No. 5, Surabaya',2);INSERT INTO receivables(customer_id,invoice_no,transaction_date,due_date,amount,created_by) VALUES (1,'INV-2026-001','2026-07-01','2026-07-30',12500000,2),(2,'INV-2026-002','2026-07-04','2026-07-20',7800000,2),(3,'INV-2026-003','2026-07-10','2026-08-10',4300000,2);INSERT INTO payments(receivable_id,payment_date,amount,method,note,created_by) VALUES (1,'2026-07-12',5000000,'Transfer','Pembayaran pertama',3),(2,'2026-07-16',7800000,'Tunai','Lunas',3);`);
+  }
+  saveDb();
+}
+
+async function boot(){
+  const clock=document.getElementById('clock');
+  if(clock){
+    const updateClock=()=>{clock.textContent=new Date().toLocaleTimeString('id-ID',{hour:'2-digit',minute:'2-digit'})};
+    updateClock();
+    setInterval(updateClock,1000);
+  }
+  
+  try{
+    if(typeof initSqlJs==='undefined')throw new Error('sql.js belum termuat');
+    App.SQL=await initSqlJs({locateFile:f=>'https://cdn.jsdelivr.net/npm/sql.js@1.10.3/dist/'+f});
+    
+    let data=null;
+    try{data=await idbGet()}catch(e){
+      const b=localStorage.getItem('piutangku_backup_b64');
+      if(b){
+        try{
+          const s=atob(b);
+          data=new Uint8Array([...s].map(c=>c.charCodeAt(0)));
+        }catch(_){}
+      }
+    }
+    
+    App.db=data?new App.SQL.Database(data):new App.SQL.Database();
+    schema();
+    render();
+  }catch(e){
+    console.error('Boot error:',e);
+    renderStaticFallback(e);
+  }
+}
+
+function can(v){return App.user&&roles[App.user.role]?.includes(v)||false}
+
+function navs(){
+  const all=[['dashboard','🏠','Dasbor'],['customers','🏢','Pelanggan'],['receivables','🧾','Piutang'],['payments','💳','Bayar'],['reports','📄','Laporan'],['users','👥','User'],['settings','⚙️','Setelan']];
+  return all.filter(x=>can(x[0])).slice(0,5);
+}
+
+function render(){
+  const r=document.getElementById('root');
+  if(!App.user){
+    r.innerHTML=loginHtml();
+    bindLogin();
+    return;
+  }
+  r.innerHTML=`${App.toast?`<div class="toast">${App.toast}</div>`:''}<div class="header"><div class="brand"><div class="logo">P</div><div><h2>PiutangKu</h2><p class="small muted">${roleLabels[App.user.role]||'User'} • ${App.user.name||'Unknown'}</p></div></div><button class="btn ghost" onclick="logout()">Keluar</button></div><div class="content">${page()}</div><div class="tabs">${navs().map(n=>`<button class="tab ${App.view===n[0]?'active':''}" onclick="go('${n[0]}')"><span>${n[1]}</span><span>${n[2]}</span></button>`).join('')}</div>${App.modal?modalHtml():''}`;
+  setTimeout(drawChart,100);
+}
+
+function loginHtml(){
+  return `<div class="login"><div class="login-logo">P</div><h1 class="title" style="text-align:center">PiutangKu</h1><p class="muted" style="text-align:center;margin:10px 0 22px">Pilih akun pengguna, password otomatis tersembunyi, lalu masuk ke dashboard PiutangKu.</p><div class="card"><label>Email Login<select id="email"><option value="admin@piutangku.local" data-password="admin123">admin@piutangku.local</option><option value="sales@piutangku.local" data-password="sales123">sales@piutangku.local</option><option value="keuangan@piutangku.local" data-password="keuangan123">keuangan@piutangku.local</option><option value="manager@piutangku.local" data-password="manager123">manager@piutangku.local</option><option value="owner@piutangku.local" data-password="owner123">owner@piutangku.local</option></select></label><label>Password<input id="password" type="password" value="admin123" readonly></label><button class="btn" style="width:100%" id="loginBtn">Masuk</button></div></div>`;
+}
+
+function bindLogin(){
+  const emailSelect=document.getElementById('email');
+  const passwordInput=document.getElementById('password');
+  const loginBtn=document.getElementById('loginBtn');
+  
+  if(!emailSelect||!passwordInput||!loginBtn)return;
+  
+  const syncPassword=()=>{
+    const idx=emailSelect.selectedIndex;
+    passwordInput.value=emailSelect.options[idx]?.dataset?.password||'admin123';
+  };
+  
+  emailSelect.onchange=syncPassword;
+  syncPassword();
+  
+  loginBtn.onclick=()=>{
+    const users=q('SELECT * FROM users WHERE email=? AND password=? AND status="active"',[emailSelect.value,passwordInput.value]);
+    if(users.length>0){
+      App.user=users[0];
+      App.view='dashboard';
+      showToast('✓ Berhasil masuk sebagai '+roleLabels[App.user.role]);
+    }else{
+      showToast('❌ Email atau password salah');
+    }
+  };
+}
+
+function logout(){App.user=null;App.view='dashboard';render()}
+function go(v){App.view=v;render()}
+
+function statusP(s){
+  return s==='paid'?'<span class="pill green">✓ Lunas</span>':s==='partial'?'<span class="pill yellow">⊕ Setengah</span>':'<span class="pill red">✕ Belum</span>';
+}
+
+function stats(){
+  const result=q(`SELECT (SELECT COUNT(*) FROM customers) customers,(SELECT COUNT(*) FROM receivables) trx,(SELECT COALESCE(SUM(amount),0) FROM receivables) total,(SELECT COALESCE(SUM(remaining_amount),0) FROM receivables) remain,(SELECT COUNT(*) FROM receivables WHERE due_date < date('now') AND status!='paid') overdue,(SELECT COALESCE(SUM(amount),0) FROM payments) paid`);
+  return result[0]||{customers:0,trx:0,total:0,remain:0,overdue:0,paid:0};
+}
+
+function page(){
+  if(App.view==='dashboard')return dashboard();
+  if(App.view==='customers')return customers();
+  if(App.view==='receivables')return receivables();
+  if(App.view==='payments')return payments();
+  if(App.view==='reports')return reports();
+  if(App.view==='users')return users();
+  return settings();
+}
+
+function dashboard(){
+  const s=stats();
+  return `<div class="hero"><h1>Dashboard Piutang</h1><p>Ringkasan cepat untuk memantau piutang, pembayaran, pelanggan, dan jatuh tempo.</p></div><div class="grid two"><div class="card"><p class="small muted">Total Piutang</p><div class="stat">${money(s.total)}</div></div><div class="card"><p class="small muted">Sisa Piutang</p><div class="stat">${money(s.remain)}</div></div><div class="card"><p class="small muted">Pelanggan</p><div class="stat">${s.customers}</div></div><div class="card"><p class="small muted">Jatuh Tempo</p><div class="stat" style="color:var(--red)">${s.overdue}</div></div></div><div class="card" style="margin-top:12px"><b>Grafik Pembayaran</b><canvas id="chart" height="170"></canvas></div><h3 style="margin:16px 0 10px">Transaksi Terbaru</h3><div class="list">${q('SELECT r.*,c.name customer FROM receivables r JOIN customers c ON c.id=r.customer_id ORDER BY r.id DESC LIMIT 4').map(x=>`<div class="card"><div class="row"><div><b>${x.invoice_no}</b><p class="small muted">${x.customer}</p></div>${statusP(x.status)}</div><p style="margin-top:8px"><b>${money(x.remaining_amount)}</b> tersisa dari ${money(x.amount)}</p></div>`).join('')||'<div class="empty">Belum ada data transaksi</div>'}</div>`;
+}
+
+function customers(){
+  return `<div class="row"><h2>Data Pelanggan</h2><button class="btn" onclick="openModal('customer')">+ Tambah</button></div><div class="list" style="margin-top:12px">${q('SELECT * FROM customers ORDER BY id DESC').map(c=>`<div class="card"><b>${c.name}</b><p class="small muted">${c.email||'-'} • ${c.phone||'-'}</p><p class="small" style="margin-top:8px">${c.address||'-'}</p></div>`).join('')||'<div class="empty">Belum ada pelanggan</div>'}</div>`;
+}
+
+function receivables(){
+  return `<div class="row"><h2>Data Piutang</h2>${App.user.role==='sales'?`<button class="btn" onclick="openModal('receivable')">+ Tambah</button>`:''}</div><div class="list" style="margin-top:12px">${q('SELECT r.*,c.name customer FROM receivables r JOIN customers c ON c.id=r.customer_id ORDER BY r.id DESC').map(x=>`<div class="card"><div class="row"><div><b>${x.invoice_no}</b><p class="small muted">${x.customer} • JT ${x.due_date}</p></div>${statusP(x.status)}</div><div class="grid two" style="margin-top:10px"><p><span class="small muted">Nominal</span><br><b>${money(x.amount)}</b></p><p><span class="small muted">Sisa</span><br><b>${money(x.remaining_amount)}</b></p></div></div>`).join('')||'<div class="empty">Belum ada piutang</div>'}</div>`;
+}
+
+function payments(){
+  return `<div class="row"><h2>Pembayaran</h2>${App.user.role==='finance'?`<button class="btn" onclick="openModal('payment')">+ Catat</button>`:''}</div><div class="list" style="margin-top:12px">${q('SELECT p.*,r.invoice_no,c.name customer FROM payments p JOIN receivables r ON r.id=p.receivable_id JOIN customers c ON c.id=r.customer_id ORDER BY p.id DESC').map(p=>`<div class="card"><div class="row"><div><b>${money(p.amount)}</b><p class="small muted">${p.customer} • ${p.invoice_no}</p></div><span class="pill blue">${p.method}</span></div><p class="small" style="margin-top:8px">${p.payment_date} — ${p.note||'-'}</p></div>`).join('')||'<div class="empty">Belum ada pembayaran</div>'}</div>`;
+}
+
+function reports(){
+  return `<div class="row"><h2>Laporan</h2><button class="btn" onclick="openModal('report')">Preview</button></div><div class="card" style="margin-top:12px"><b>Format PDF/Cetak</b><p class="small muted" style="margin-top:8px;line-height:1.6">Tabel laporan berisi nama perusahaan, status lunas/tidak lunas, email, nomor telepon, dan alamat. Warna status: hijau lunas, kuning bayar setengah, merah belum lunas.</p></div><div class="list" style="margin-top:12px">${q('SELECT r.*,u.name creator FROM reports r LEFT JOIN users u ON u.id=r.created_by ORDER BY r.id DESC').map(x=>`<div class="card"><b>${x.report_no}</b><p class="small muted">${x.report_type||'-'} • ${x.period_start||'-'} s/d ${x.period_end||'-'}</p><p class="small">Dibuat oleh ${x.creator||'-'}</p></div>`).join('')||'<div class="empty">Belum ada riwayat laporan</div>'}</div>`;
+}
+
+function users(){
+  return `<div class="row"><h2>Pengguna</h2><button class="btn" onclick="openModal('user')">+ Tambah</button></div><div class="list" style="margin-top:12px">${q('SELECT * FROM users ORDER BY id').map(u=>`<div class="card"><div class="row"><div><b>${u.name}</b><p class="small muted">${u.email}</p></div><span class="pill blue">${roleLabels[u.role]||'User'}</span></div></div>`).join('')||'<div class="empty">Belum ada pengguna</div>'}</div>`;
+}
+
+function settings(){
+  return `<h2>Pengaturan</h2><div class="card" style="margin-top:12px"><b>Cadangan Data Lokal</b><p class="small muted" style="line-height:1.6;margin:8px 0 12px">Ekspor database SQLite ke file agar data aman jika cache browser dibersihkan.</p><button class="btn" onclick="exportDb()">📥 Cadangkan Data</button><label class="btn secondary" style="margin-top:10px;text-align:center;cursor:pointer">📤 Pulihkan Data<input type="file" accept=".sqlite,.db" style="display:none" onchange="importDb(event)"></label></div><div class="card" style="margin-top:12px"><b>Arsitektur</b><p class="small muted" style="line-height:1.7;margin-top:8px">Local-first SQLite WASM, autosave IndexedDB, fallback localStorage/RAM, RBAC per role, dan trigger SQL untuk menghitung sisa piutang otomatis.</p></div>`;
+}
+
+function openModal(t){App.modal=t;render()}
+function closeModal(){App.modal=null;render()}
+
+function modalHtml(){
+  const t=App.modal;
+  if(t==='customer')return sheet('Tambah Pelanggan',`<label>Nama Perusahaan<input id="m_name" required></label><label>Email<input id="m_email" type="email"></label><label>No Telepon<input id="m_phone"></label><label>Alamat<textarea id="m_address"></textarea></label><button class="btn" onclick="saveCustomer()" style="width:100%">Simpan</button>`);
+  
+  if(t==='receivable'){
+    const customers=q('SELECT * FROM customers');
+    const opts=customers.map(c=>`<option value="${c.id}">${c.name}</option>`).join('');
+    if(!opts)return sheet('Tambah Piutang','<div class="empty">Tambahkan pelanggan terlebih dahulu</div>');
+    return sheet('Tambah Piutang',`<label>Pelanggan<select id="m_customer" required>${opts}</select></label><label>No Faktur<input id="m_invoice" value="INV-2026-${Date.now().toString().slice(-4)}" required></label><label>Tanggal Transaksi<input type="date" id="m_date" value="${today()}" required></label><label>Jatuh Tempo<input type="date" id="m_due" value="${today()}" required></label><label>Nominal<input type="number" id="m_amount" value="1000000" required></label><button class="btn" onclick="saveReceivable()" style="width:100%">Simpan</button>`);
+  }
+  
+  if(t==='payment'){
+    const receivables=q('SELECT r.*,c.name customer FROM receivables r JOIN customers c ON c.id=r.customer_id WHERE r.status!="paid"');
+    const opts=receivables.map(r=>`<option value="${r.id}">${r.invoice_no} - ${r.customer} (${money(r.remaining_amount)})</option>`).join('');
+    if(!opts)return sheet('Catat Pembayaran','<div class="empty">Tidak ada piutang yang belum terbayar</div>');
+    return sheet('Catat Pembayaran',`<label>Piutang<select id="m_receivable" required>${opts}</select></label><label>Tanggal<input type="date" id="m_date" value="${today()}" required></label><label>Nominal Bayar<input type="number" id="m_amount" value="500000" required></label><label>Metode<select id="m_method"><option>Transfer</option><option>Tunai</option><option>Giro</option></select></label><label>Keterangan<textarea id="m_note"></textarea></label><button class="btn" onclick="savePayment()" style="width:100%">Simpan</button>`);
+  }
+  
+  if(t==='user')return sheet('Tambah Pengguna',`<label>Nama<input id="m_name" required></label><label>Email<input id="m_email" type="email" required></label><label>Password<input id="m_password" value="user123" required></label><label>Role<select id="m_role"><option value="sales">Staf Penjualan</option><option value="finance">Staf Keuangan</option><option value="manager">Manajer Keuangan</option><option value="owner">Pemilik</option><option value="admin">Admin</option></select></label><button class="btn" onclick="saveUser()" style="width:100%">Simpan</button>`);
+  
+  return sheet('Preview Laporan',reportPreview()+`<button class="btn" onclick="generateReport()" style="width:100%;margin-top:12px">Generate & Cetak PDF</button>`);
+}
+
+function sheet(title,body){
+  return `<div class="modal"><div class="sheet"><div class="row" style="margin-bottom:12px"><h2>${title}</h2><button class="btn secondary" onclick="closeModal()">Tutup</button></div>${body}</div></div>`;
+}
+
+function saveCustomer(){
+  const name=document.getElementById('m_name')?.value;
+  if(!name?.trim()){showToast('❌ Nama harus diisi');return;}
+  run('INSERT INTO customers(name,email,phone,address,created_by) VALUES(?,?,?,?,?)',[name,document.getElementById('m_email')?.value,document.getElementById('m_phone')?.value,document.getElementById('m_address')?.value,App.user.id]);
+  closeModal();
+  showToast('✓ Pelanggan ditambahkan');
+}
+
+function saveReceivable(){
+  const inv=document.getElementById('m_invoice')?.value;
+  if(!inv?.trim()){showToast('❌ No Faktur harus diisi');return;}
+  run('INSERT INTO receivables(customer_id,invoice_no,transaction_date,due_date,amount,created_by) VALUES(?,?,?,?,?,?)',[document.getElementById('m_customer')?.value,inv,document.getElementById('m_date')?.value,document.getElementById('m_due')?.value,Number(document.getElementById('m_amount')?.value)||0,App.user.id]);
+  closeModal();
+  showToast('✓ Piutang ditambahkan');
+}
+
+function savePayment(){
+  const amount=Number(document.getElementById('m_amount')?.value)||0;
+  if(amount<=0){showToast('❌ Nominal harus lebih dari 0');return;}
+  run('INSERT INTO payments(receivable_id,payment_date,amount,method,note,created_by) VALUES(?,?,?,?,?,?)',[document.getElementById('m_receivable')?.value,document.getElementById('m_date')?.value,amount,document.getElementById('m_method')?.value,document.getElementById('m_note')?.value,App.user.id]);
+  closeModal();
+  showToast('✓ Pembayaran dicatat');
+}
+
+function saveUser(){
+  const name=document.getElementById('m_name')?.value;
+  const email=document.getElementById('m_email')?.value;
+  if(!name?.trim()){showToast('❌ Nama harus diisi');return;}
+  if(!email?.trim()){showToast('❌ Email harus diisi');return;}
+  run('INSERT INTO users(name,email,password,role,status) VALUES(?,?,?,?,"active")',[name,email,document.getElementById('m_password')?.value,document.getElementById('m_role')?.value]);
+  closeModal();
+  showToast('✓ Pengguna ditambahkan');
+}
+
+function reportPreview(){
+  const rows=q('SELECT c.name,c.email,c.phone,c.address,r.status,r.amount,r.remaining_amount FROM receivables r JOIN customers c ON c.id=r.customer_id ORDER BY c.name');
+  return `<div class="print-area"><h2>Laporan Piutang PiutangKu</h2><p class="small muted">Tanggal: ${today()} • Dibuat oleh: ${App.user.name}</p><div class="table-wrap" style="margin-top:12px"><table><thead><tr><th>Perusahaan</th><th>Status</th><th>Email</th><th>No Telpon</th><th>Alamat</th><th>Sisa</th></tr></thead><tbody>${rows.map(x=>`<tr><td>${x.name}</td><td>${statusP(x.status)}</td><td>${x.email||'-'}</td><td>${x.phone||'-'}</td><td>${x.address||'-'}</td><td>${money(x.remaining_amount)}</td></tr>`).join('')}</tbody></table></div></div>`;
+}
+
+function generateReport(){
+  const no='RPT-'+Date.now();
+  run('INSERT INTO reports(report_no,report_type,period_start,period_end,created_by,file_name) VALUES(?,?,?,?,?,?)',[no,'Laporan Piutang',today(),today(),App.user.id,no+'.pdf']);
+  document.body.insertAdjacentHTML('beforeend',`<div class="only-print">${reportPreview()}</div>`);
+  setTimeout(()=>{
+    window.print();
+    document.querySelector('.only-print')?.remove();
+    closeModal();
+    showToast('✓ Laporan dibuat. Pilih Save as PDF saat dialog cetak.');
+  },300);
+}
+
+function exportDb(){
+  try{
+    const data=App.db.export();
+    const blob=new Blob([data],{type:'application/octet-stream'});
+    const a=document.createElement('a');
+    a.href=URL.createObjectURL(blob);
+    a.download='piutangku-backup.sqlite';
+    a.click();
+    URL.revokeObjectURL(a.href);
+    showToast('✓ Data berhasil diunduh');
+  }catch(e){
+    showToast('❌ Gagal mengunduh data');
+  }
+}
+
+function importDb(e){
+  const f=e.target.files?.[0];
+  if(!f){showToast('❌ File tidak valid');return;}
+  const rd=new FileReader();
+  rd.onload=()=>{
+    try{
+      App.db=new App.SQL.Database(new Uint8Array(rd.result));
+      schema();
+      showToast('✓ Data berhasil dipulihkan');
+      render();
+    }catch(err){
+      showToast('❌ Gagal memulihkan data');
+    }
+  };
+  rd.onerror=()=>{showToast('❌ Error membaca file')};
+  rd.readAsArrayBuffer(f);
+}
+
+function drawChart(){
+  const c=document.getElementById('chart');
+  if(!c||!c.parentElement)return;
+  try{
+    if(App.chart)App.chart.destroy();
+    const s=stats();
+    App.chart=new Chart(c,{
+      type:'doughnut',
+      data:{
+        labels:['Terbayar','Sisa Piutang'],
+        datasets:[{
+          data:[s.paid||0,s.remain||0],
+          backgroundColor:['#16a34a','#2563eb'],
+          borderWidth:0
+        }]
+      },
+      options:{
+        responsive:true,
+        maintainAspectRatio:true,
+        plugins:{legend:{position:'bottom'}}
+      }
+    });
+  }catch(e){
+    console.error('Chart error:',e);
+  }
+}
+
+function renderStaticFallback(e){
+  document.getElementById('root').innerHTML=`<div class="login"><div class="login-logo">P</div><h1 class="title" style="text-align:center">PiutangKu</h1><p class="muted" style="text-align:center;margin:10px 0 22px">Mode tampilan aman aktif. Library SQLite WASM tidak termuat di lingkungan ini, tetapi aplikasi tidak blank dan siap berjalan saat file sql.js tersedia.</p><div class="card"><b>Proteksi Bootstrapping Aktif</b><p class="small muted" style="line-height:1.7;margin-top:8px">Fallback mencegah blank page. Untuk penggunaan penuh, buka file ini dengan koneksi internet atau salin sql.js dan sql-wasm.wasm ke hosting yang sama.</p></div><div class="hero"><h1>Dashboard Piutang</h1><p>Total piutang, pembayaran, laporan PDF, RBAC, dan cadangan data lokal sudah dirancang dalam single index.html.</p></div><div class="grid two"><div class="card"><p class="small muted">Total Piutang</p><div class="stat">Rp 24.600.000</div></div><div class="card"><p class="small muted">Sisa Piutang</p><div class="stat">Rp 11.900.000</div></div></div></div>`;
+}
+
+window.addEventListener('error',e=>{
+  const root=document.getElementById('root');
+  if(root&&!root.innerHTML){renderStaticFallback(e.error)}
+});
+
+boot();
 </script></body></html>
